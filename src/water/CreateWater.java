@@ -8,17 +8,15 @@ public class CreateWater {
     private int numberOxygen = 0;
     private int numberHydrogen = 0;
     private Random symbol = new Random();
-    private StringJoiner result = new StringJoiner("");
+    private StringJoiner  result = new StringJoiner("");
 
     public CreateWater(int elements) {
             this.elements = elements;
         }
      public StringJoiner finalResult() {
         String inputElements = "OH";
-        int i = 0;
-        while (i <= elements){
-            i++;
-            char element = inputElements.charAt(symbol.nextInt(2));
+         while (numberOxygen < elements/3 || numberHydrogen < elements/3*2){
+             char element = inputElements.charAt(symbol.nextInt(2));
             switch (element) {
                 case 'O':
                     if (numberOxygen < (elements / 3)) {
