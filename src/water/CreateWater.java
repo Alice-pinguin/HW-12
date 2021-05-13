@@ -16,7 +16,7 @@ public class CreateWater {
         public StringJoiner finalResult() {
         String inputElements = "OH";
         int i = 0;
-        while (i < Integer.MAX_VALUE) {
+        while (i < 10) {
             i++;
             char element = inputElements.charAt(symbol.nextInt(2));
             switch (element) {

@@ -1,5 +1,6 @@
 package water;
-import java.util.concurrent.BrokenBarrierException;
+
+import lombok.SneakyThrows;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 
@@ -13,24 +14,17 @@ public class Water {
         oxygen = new Semaphore(1);
         hydrogen = new Semaphore(2);
     }
-
-    public void atomicHydrogen(Runnable atomHydrogen) throws InterruptedException {
+    @SneakyThrows
+    public void atomicHydrogen(Runnable atomHydrogen) {
         hydrogen.acquire();
-        try {
-            barrier.await();
-        } catch (BrokenBarrierException eH) {
-            eH.printStackTrace();
-        }
+        barrier.await();
         atomHydrogen.run();
         hydrogen.release();
     }
-    public void atomicOxygen(Runnable atomOxygen) throws InterruptedException {
+    @SneakyThrows
+    public void atomicOxygen(Runnable atomOxygen){
         oxygen.acquire();
-        try {
-            barrier.await();
-        } catch (Exception eO) {
-            eO.printStackTrace();
-        }
+        barrier.await();
         atomOxygen.run();
         oxygen.release();
     }
