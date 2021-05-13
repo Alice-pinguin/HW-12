@@ -2,7 +2,7 @@ package water;
 
 public class BuildWater {
     public static void main(String[] args) {
-        CreateWater inputSymbols = new CreateWater(9);
+        CreateWater inputSymbols = new CreateWater(10);
         Water waterCyclicBarrier = new Water();
         String finalStr = inputSymbols.finalResult().toString();
         System.out.println("Input symbol : " + finalStr);

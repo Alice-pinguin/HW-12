@@ -10,13 +10,13 @@ public class CreateWater {
     private Random symbol = new Random();
     private StringJoiner result = new StringJoiner("");
 
-    public CreateWater(int countElements) {
-            this.elements = countElements;
+    public CreateWater(int elements) {
+            this.elements = elements;
         }
-        public StringJoiner finalResult() {
+     public StringJoiner finalResult() {
         String inputElements = "OH";
         int i = 0;
-        while (i < 10) {
+        while (i <= elements){
             i++;
             char element = inputElements.charAt(symbol.nextInt(2));
             switch (element) {
